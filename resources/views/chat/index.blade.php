@@ -24,7 +24,6 @@
     {{csrf_field()}}
     <textarea style="width: 100%; height: 50px" name="content"></textarea>
     <input type="submit" value="Отправить">
-
 </form>
 
 
@@ -45,17 +44,17 @@
     }
 
 
-    $('form').on('submit', function () {
-        var text = $('textarea').val(),
-            msg = {message : text};
-
-        socket.send(msg);
-        appandMessage(msg);
-
-        $('textarea').val('');
-
-        return false;
-    })
+//    $('form').on('submit', function () {
+//        var text = $('textarea').val(),
+//            msg = {message : text};
+//
+//        socket.send(msg);
+//        appandMessage(msg);
+//
+//        $('textarea').val('');
+//
+//        return false;
+//    });
 
     socket.on('chat:message', function (data) {
         console.log(data);
